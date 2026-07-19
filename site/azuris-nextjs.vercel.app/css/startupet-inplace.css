@@ -1,0 +1,10 @@
+/* StartupET — minimal CSS-only overrides for the in-place repurposed
+   index-creative-agency template. Never touches structure/hydration —
+   safe to load alongside the original theme CSS. */
+
+/* Portfolio showcase repurposed as eligibility-pathway cards: the original
+   template pairs each preview with a fictional "client" logo, which has no
+   honest equivalent here, so it's hidden rather than replaced with a fake mark. */
+.mxd-project-item__logowrap {
+  display: none !important;
+}
