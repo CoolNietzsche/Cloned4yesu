@@ -8,3 +8,45 @@
 .mxd-project-item__logowrap {
   display: none !important;
 }
+
+/* Real StartupET wordmark (dark type on transparent) replacing the hand-drawn
+   mascot mark. Pin the theme to its light palette so the mark stays legible
+   regardless of the visitor's OS/manual dark-mode preference, and give it a
+   readable, non-stretched box since it's now a raster image, not a scalable path. */
+.mxd-logo__image,
+.menu-logo__image {
+  width: auto;
+  height: 3.6rem;
+  object-fit: contain;
+  display: inline-block;
+}
+.menu-logo__image {
+  height: 4rem;
+}
+
+:root {
+  --base: var(--base--light);
+  --base-rgb: var(--base-rgb--light);
+  --base-tint: var(--base-tint--light);
+  --base-tint-rgb: var(--base-tint-rgb--light);
+  --base-bright: var(--base-bright--light);
+  --base-bright-rgb: var(--base-bright-rgb--light);
+  --accent: var(--accent--light);
+  --highlight: var(--highlight--light);
+  --base-opp: var(--base-opp--light);
+  --base-opp-rgb: var(--base-opp-rgb--light);
+  --t-bright: var(--t-bright--light);
+  --t-medium: var(--t-medium--light);
+  --t-muted: var(--t-muted--light);
+  --t-muted-extra: var(--t-muted-extra--light);
+  --t-opp-bright: var(--t-opp-bright--light);
+  --t-opp-medium: var(--t-opp-medium--light);
+  --t-opp-muted: var(--t-opp-muted--light);
+  --t-opp-muted-extra: var(--t-opp-muted-extra--light);
+  --st-muted: var(--st-muted--light);
+  --st-medium: var(--st-medium--light);
+  --st-bright: var(--st-bright--light);
+}
+html {
+  color-scheme: light;
+}
