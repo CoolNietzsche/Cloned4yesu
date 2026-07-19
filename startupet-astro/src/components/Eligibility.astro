@@ -1,0 +1,41 @@
+---
+// Eligibility — Legal Prerequisites, 4 Pillars (spec section 5).
+const pillars = [
+  ['01', 'Technology Introduction', 'Bringing a completely novel, technology-enabled product, process, or service to the local Ethiopian market for the first time.'],
+  ['02', 'Technology Adoption', 'Modifying and successfully applying existing technologies to solve systemic Ethiopian challenges that conventional local approaches haven’t addressed.'],
+  ['03', 'Technology Transplantation', 'Adapting a proven global technology model or software structure, tailored to Ethiopia’s socioeconomic and regulatory context.'],
+  ['04', 'Reverse Engineering', 'Deconstructing and rebuilding technological hardware or complex software frameworks to localize manufacturing or develop proprietary local software assets.'],
+];
+---
+<div id="eligibility" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-7 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Eligibility — Legal Prerequisites</span>
+            <h2 class="reveal-type" data-anim="revealType">Four Pillars of Legal Innovation.</h2>
+          </div>
+          <div class="col-12 col-xl-5 mxd-grid-item">
+            <p class="eligibility-intro t-medium" data-el-anim="inUp">To qualify for Startup Designation, a business must demonstrate that it creates positive economic value via a highly scalable, tech-enabled product or model, through at least one of the following.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          {pillars.map(([n, title, body], i) => (
+            <div class="col-12 mxd-grid-item">
+              <div class="pillar-row animate-card-2">
+                <span class="pillar-row__num">{n}</span>
+                <h3 class="pillar-row__title">{title}</h3>
+                <p class="pillar-row__body t-medium">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

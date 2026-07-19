@@ -1,0 +1,67 @@
+---
+// Eligibility — Statutory Thresholds (spec section 6). Interactive tabbed
+// component with an "01 / 03" pager. Only clause 1 has published copy today;
+// 2 & 3 show an honest "not yet published" state (spec says these load later).
+const clauses = [
+  { n: '01', title: 'Innovation & Scalability Test',
+    body: 'The business must create positive economic value through a highly scalable, tech-enabled product or model — via introduction, adoption, transplantation, or reverse engineering of technology — to solve a localized market challenge.' },
+  { n: '02', title: 'Founder Equity Safeguard', body: null },
+  { n: '03', title: 'Entity Type Restriction', body: null },
+];
+---
+<div class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-8 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Eligibility — Statutory Thresholds</span>
+            <h2 class="reveal-type" data-anim="revealType">Startup Designation Criteria.</h2>
+          </div>
+          <div class="col-12 col-xl-4 mxd-grid-item">
+            <p class="thresholds-intro t-medium" data-el-anim="inUp">Applications are evaluated strictly against these legal, corporate, and structural thresholds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mxd-block">
+      <div class="thresholds" data-el-anim="inUp">
+        <div class="thresholds__tabs" role="tablist">
+          {clauses.map((c, i) => (
+            <button class:list={["thresholds__tab", { 'is-active': i === 0 }]} role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'} data-tab={i}>
+              <span class="thresholds__tab-num">{c.n}</span>
+              <span class="thresholds__tab-title mxd-scramble">{c.title}</span>
+            </button>
+          ))}
+        </div>
+        <div class="thresholds__panels">
+          {clauses.map((c, i) => (
+            <div class:list={["thresholds__panel", { 'is-active': i === 0 }]} role="tabpanel" data-panel={i}>
+              <span class="thresholds__pager">{c.n} / 03</span>
+              <h3 class="thresholds__panel-title">Clause {c.n} — {c.title}</h3>
+              {c.body
+                ? <p class="t-large thresholds__panel-body">{c.body}</p>
+                : <p class="t-large thresholds__panel-body thresholds__panel-body--pending">Criteria for this clause will be published here as the Proclamation’s implementing directives are finalized.</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const root = document.currentScript?.previousElementSibling;
+  document.querySelectorAll('.thresholds').forEach((el) => {
+    const tabs = el.querySelectorAll('.thresholds__tab');
+    const panels = el.querySelectorAll('.thresholds__panel');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const i = tab.dataset.tab;
+        tabs.forEach((t) => { t.classList.toggle('is-active', t === tab); t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+        panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === i));
+      });
+    });
+  });
+</script>

@@ -123,3 +123,78 @@
    parks off-screen after an intro wipe. Park it by default so it never covers
    the page; animations.js plays the intro wipe on load. */
 .mxd-page-transition { transform: translateY(-100%); }
+
+/* Hero divider now carries the PM portrait rather than a video clip. Fill the
+   theme's fixed-height divider frame edge-to-edge with the image. */
+.mxd-divider__image { overflow: hidden; }
+.mxd-divider__image img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block;
+}
+
+/* ---- Why This Platform (4 value cards) ---- */
+.feature-card {
+  height: 100%; padding: 3.2rem 2.6rem; margin: 0 1rem;
+  border-top: 2px solid var(--accent); background: rgba(var(--base-bright-rgb), 0.5);
+  display: flex; flex-direction: column; gap: 1.2rem;
+}
+.feature-card__num {
+  font-family: var(--font-jetbrains-mono, monospace); color: var(--accent);
+  font-size: 1.4rem; letter-spacing: 0.08em;
+}
+.feature-card__title { font-size: 2rem; margin: 0; line-height: 1.15; }
+
+/* ---- Eligibility (4 pillars as ruled rows) ---- */
+.eligibility-intro, .thresholds-intro { color: var(--t-medium); max-width: 42rem; }
+.pillar-row {
+  display: grid; grid-template-columns: 8rem minmax(20rem, 28rem) 1fr; gap: 2.4rem;
+  align-items: baseline; padding: 3.2rem 0; border-top: 1px solid var(--se-line);
+}
+.pillar-row:last-child { border-bottom: 1px solid var(--se-line); }
+.pillar-row__num { font-family: var(--font-jetbrains-mono, monospace); color: var(--accent); font-size: 1.6rem; }
+.pillar-row__title { font-size: clamp(2rem, 2.6vw, 2.8rem); margin: 0; }
+.pillar-row__body { color: var(--t-medium); max-width: 52rem; }
+@media (max-width: 991px) {
+  .pillar-row { grid-template-columns: 5rem 1fr; }
+  .pillar-row__body { grid-column: 1 / -1; }
+}
+
+/* ---- Statutory Thresholds (tabs) ---- */
+.thresholds { display: grid; grid-template-columns: minmax(28rem, 34rem) 1fr; gap: 0; border: 1px solid var(--se-line); border-radius: 1.6rem; overflow: hidden; }
+@media (max-width: 991px) { .thresholds { grid-template-columns: 1fr; } }
+.thresholds__tabs { display: flex; flex-direction: column; background: rgba(var(--base-bright-rgb), 0.5); border-right: 1px solid var(--se-line); }
+@media (max-width: 991px) { .thresholds__tabs { flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--se-line); } }
+.thresholds__tab {
+  display: flex; align-items: baseline; gap: 1.2rem; text-align: left;
+  padding: 2.4rem 2.6rem; background: none; border: none; cursor: pointer;
+  border-bottom: 1px solid var(--se-line); color: var(--t-muted);
+  transition: color .3s, background .3s; white-space: nowrap;
+}
+.thresholds__tab:hover { color: var(--t-bright); }
+.thresholds__tab.is-active { color: var(--t-bright); background: var(--base-bright); }
+.thresholds__tab-num { font-family: var(--font-jetbrains-mono, monospace); color: var(--accent); font-size: 1.3rem; }
+.thresholds__tab-title { font-size: 1.7rem; }
+.thresholds__panels { position: relative; padding: clamp(3rem, 5vw, 6rem); min-height: 32rem; background: var(--base-bright); }
+.thresholds__panel { display: none; }
+.thresholds__panel.is-active { display: block; }
+.thresholds__pager { font-family: var(--font-jetbrains-mono, monospace); color: var(--t-muted); font-size: 1.3rem; letter-spacing: 0.1em; }
+.thresholds__panel-title { font-size: clamp(2.2rem, 3vw, 3.2rem); margin: 1.6rem 0 2.4rem; }
+.thresholds__panel-body { max-width: 56rem; color: var(--t-medium); }
+.thresholds__panel-body--pending { color: var(--t-muted); font-style: italic; }
+
+/* ---- Alternate Track ---- */
+.alt-track {
+  display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem clamp(3rem, 6vw, 8rem);
+  padding: clamp(3.6rem, 5vw, 6.4rem); border-radius: 2rem;
+  background: var(--base-opp); color: var(--t-opp-bright);
+}
+@media (max-width: 991px) { .alt-track { grid-template-columns: 1fr; gap: 3rem; } }
+.alt-track .tag { color: var(--highlight, #7cf); align-self: flex-start; }
+.alt-track__head h2 { color: var(--t-opp-bright); }
+.alt-track__body p { color: var(--t-opp-medium); }
+.alt-track__badges { list-style: none; margin: 3rem 0 0; padding: 0; display: grid; gap: 1.2rem; }
+.alt-track__badge {
+  display: flex; align-items: center; gap: 1.2rem; padding: 1.4rem 1.8rem;
+  border: 1px solid rgba(var(--base-rgb), 0.18); border-radius: 1rem;
+  color: var(--t-opp-bright); font-size: 1.5rem;
+}
+.alt-track__badge::before { content: ""; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--accent); flex: none; }
