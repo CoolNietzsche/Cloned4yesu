@@ -1,0 +1,41 @@
+---
+// Data Protection & Security — 4 callouts (spec section 14).
+const callouts = [
+  ['Encrypted by Default', 'All connections are SSL/TLS-encrypted; data is encrypted at rest using industry-standard AES encryption.'],
+  ['Role-Based Access', 'Every user role is limited to the data and actions relevant to their function.'],
+  ['Full Audit Trail', 'Every action on the platform is logged for accountability and regulatory compliance.'],
+  ['Grounded in Law', 'Data handling follows Proclamation No. 1396/2025 and Ethiopian data protection law.'],
+];
+---
+<div class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-7 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Data Protection</span>
+            <h2 class="reveal-type" data-anim="revealType">Security &amp; Accountability.</h2>
+          </div>
+          <div class="col-12 col-xl-5 mxd-grid-item">
+            <p class="section-intro t-medium" data-el-anim="inUp">The platform operates in full compliance with Ethiopian data protection law and the Startup Proclamation. All applicant data and certification records are stored within jurisdictional infrastructure, accessible only to authorized Ministry officials, Committee members, and regional hub coordinators.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          {callouts.map(([title, body]) => (
+            <div class="col-12 col-md-6 col-xl-3 mxd-grid-item">
+              <div class="callout-card animate-card-4">
+                <span class="callout-card__mark" aria-hidden="true"></span>
+                <h3 class="callout-card__title">{title}</h3>
+                <p class="t-medium">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

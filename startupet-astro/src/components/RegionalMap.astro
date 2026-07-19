@@ -1,0 +1,38 @@
+---
+// Regional Network Map (spec section 13). One live hub + coming-soon slots,
+// data-driven so real hubs can be filled in later.
+const hubs = [
+  { name: 'Addis Ababa', role: 'Central Hub · National Coordination', status: 'live' },
+  ...Array.from({ length: 7 }, () => ({ name: 'Regional hub', role: 'To be confirmed · Announced by MinT', status: 'soon' })),
+];
+---
+<div id="network" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-6 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Regional Network</span>
+            <h2 class="reveal-type" data-anim="revealType">Present Across Ethiopia.</h2>
+          </div>
+          <div class="col-12 col-xl-6 mxd-grid-item">
+            <p class="section-intro t-medium" data-el-anim="inUp">The Ministry is establishing regional Science, Technology &amp; Innovation hubs across Ethiopia to bring Startup Designation services, mentorship, and innovation infrastructure closer to founders in every region — connecting startups to regional resources and ensuring equitable access to national benefits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="hub-grid">
+        {hubs.map((h) => (
+          <div class:list={["hub-card animate-card-4", { 'hub-card--live': h.status === 'live' }]}>
+            <span class:list={["status-badge", h.status === 'live' ? 'status-badge--live' : 'status-badge--soon']}>
+              {h.status === 'live' ? 'Active now' : 'Coming soon'}
+            </span>
+            <h3 class="hub-card__name">{h.name}</h3>
+            <p class="hub-card__role t-medium">{h.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

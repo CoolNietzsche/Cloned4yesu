@@ -1,0 +1,45 @@
+---
+// Governance Structure — 3 tiers (spec section 9).
+const tiers = [
+  { tier: 'Tier 1', kind: 'Policy', org: 'National Digital Economy Council',
+    points: ['Sets strategic direction for the digital economy', 'Aligns innovation efforts across all line ministries', 'Supervises national ecosystem health', 'Approves policy frameworks and regulations'] },
+  { tier: 'Tier 2', kind: 'Execution', org: 'Ministry of Innovation and Technology',
+    points: ['Manages the Digital Startup Portal — the single national registration interface', 'Runs day-to-day platform operations', 'Processes applications and issues certificates', 'Coordinates the regional hub network'] },
+  { tier: 'Tier 3', kind: 'Evaluation', org: 'National Startup Designation Committee',
+    points: ['Evaluates applications against published criteria', 'Conducts founder validation interviews', 'Issues Designation Certificates', 'Includes academics, civil society, and industry representatives', 'May recommend certificate renewal or rejection'] },
+];
+---
+<div id="governance" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-7 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Structure</span>
+            <h2 class="reveal-type" data-anim="revealType">Institutional Governance.</h2>
+          </div>
+          <div class="col-12 col-xl-5 mxd-grid-item">
+            <p class="section-intro t-medium" data-el-anim="inUp">The platform operates under a three-tier governance structure that ensures policy coherence, operational excellence, and rigorous evaluation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="gov-tiers">
+        {tiers.map((t) => (
+          <div class="gov-tier animate-card-3">
+            <div class="gov-tier__head">
+              <span class="gov-tier__tier tag tag-s">{t.tier}</span>
+              <span class="gov-tier__kind">{t.kind}</span>
+              <h3 class="gov-tier__org">{t.org}</h3>
+            </div>
+            <ul class="gov-tier__points">
+              {t.points.map((p) => <li>{p}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="gov-summary t-large" data-el-anim="inUp">The National Digital Economy Council sets strategic direction, the Ministry executes the platform and manages day-to-day operations, and the Designation Committee applies rigorous, criteria-based evaluation. This separation of powers keeps policy, operations, and evaluation independent, transparent, and accountable.</p>
+    </div>
+  </div>
+</div>

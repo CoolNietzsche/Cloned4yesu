@@ -1,0 +1,60 @@
+---
+// Resources + Quick Actions (spec sections 16 / 16b).
+const resources = [
+  ['Startup Proclamation No. 1396/2025 (PDF)', 'The full legal text establishing the platform and its criteria.'],
+  ['Plain-Language Eligibility & Compliance Guide', 'A simplified walkthrough of cap tables, PLC equity structuring, and reporting requirements.'],
+  ['Certificate Verification', 'Public lookup tool to confirm any designation certificate.'],
+  ['FAQ', 'Answers to common questions about the platform and designation.'],
+];
+const actions = [
+  ['Startup Registration', 'Start or continue your application.'],
+  ['Regional Hub Portal', 'For registered hub administrators.'],
+  ['Certificate Verification', 'Confirm any designation certificate’s authenticity.'],
+];
+---
+<div id="resources" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Resources</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          <div class="col-12 col-xl-7 mxd-grid-item">
+            <ul class="resource-list">
+              {resources.map(([title, desc], i) => (
+                <li class="resource-item animate-card-2">
+                  <a href="#0">
+                    <span class="resource-item__idx">{String(i + 1).padStart(2, '0')}</span>
+                    <span class="resource-item__body">
+                      <span class="resource-item__title">{title}</span>
+                      <span class="resource-item__desc">{desc}</span>
+                    </span>
+                    <span class="resource-item__arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="col-12 col-xl-5 mxd-grid-item">
+            <div class="quick-actions" data-el-anim="inUp">
+              <span class="tag tag-s mxd-scramble">Quick actions</span>
+              {actions.map(([title, desc]) => (
+                <a class="quick-action" href="#0" data-cursor-text="Open">
+                  <span class="quick-action__title">{title}</span>
+                  <span class="quick-action__desc">{desc}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

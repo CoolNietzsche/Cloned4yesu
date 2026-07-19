@@ -1,0 +1,66 @@
+---
+// Core Platform Capabilities — tabbed showcase with a code-style detail panel
+// and a status badge per tab (spec section 15).
+const caps = [
+  { tab: 'Registration', code: 'registration.flow', title: 'Startup Registration', status: 'Operational',
+    desc: 'Comprehensive registration workflow aligned to Commercial Code requirements.' },
+  { tab: 'Certificates', code: 'certificate.issue', title: 'Certificate & QR Generation', status: 'Operational',
+    desc: 'Instant Provisional Designation Certificates with verification QR codes.' },
+  { tab: 'Analytics', code: 'analytics.registry', title: 'National Analytics Dashboard', status: 'Operational',
+    desc: 'Aggregated STI registry statistics for policy oversight.' },
+  { tab: 'Hubs', code: 'hubs.pipeline', title: 'Regional Hub Management', status: 'Live',
+    desc: 'A federated pipeline for regional nodes to report occupancy, programs, and status.' },
+  { tab: 'Language', code: 'i18n.coverage', title: 'Multilingual Support', status: 'Operational',
+    desc: 'English and Amharic, expanding as translation coverage grows.' },
+];
+---
+<div id="capabilities" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12 col-xl-9 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">MinT Certified Infrastructure</span>
+            <h2 class="reveal-type" data-anim="revealType">Core Platform Capabilities.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="thresholds capabilities" data-el-anim="inUp">
+        <div class="thresholds__tabs" role="tablist">
+          {caps.map((c, i) => (
+            <button class:list={["thresholds__tab", { 'is-active': i === 0 }]} role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'} data-tab={i}>
+              <span class="thresholds__tab-num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="thresholds__tab-title mxd-scramble">{c.tab}</span>
+            </button>
+          ))}
+        </div>
+        <div class="thresholds__panels">
+          {caps.map((c, i) => (
+            <div class:list={["thresholds__panel", { 'is-active': i === 0 }]} role="tabpanel" data-panel={i}>
+              <div class="cap-panel__top">
+                <span class="cap-panel__code">{c.code}</span>
+                <span class="status-badge status-badge--live">{c.status}</span>
+              </div>
+              <h3 class="thresholds__panel-title">{c.title}</h3>
+              <p class="t-large thresholds__panel-body">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.capabilities').forEach((el) => {
+    const tabs = el.querySelectorAll('.thresholds__tab');
+    const panels = el.querySelectorAll('.thresholds__panel');
+    tabs.forEach((tab) => tab.addEventListener('click', () => {
+      const i = tab.dataset.tab;
+      tabs.forEach((t) => { t.classList.toggle('is-active', t === tab); t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+      panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === i));
+    }));
+  });
+</script>

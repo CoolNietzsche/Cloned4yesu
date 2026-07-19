@@ -1,0 +1,53 @@
+---
+// Contact (spec section 18). Phone/email are honest "to be provided" states.
+const channels = [
+  'Email support for general inquiries and application status',
+  'Phone support for urgent matters',
+  'Regional hub offices for in-person support and mentorship',
+];
+const times = [
+  ['Emails', 'Typically within 2–3 business days'],
+  ['Urgent issues', 'Call for a faster response'],
+  ['Applications', 'Full review typically within 30–45 days'],
+  ['Committee review', 'May include a founder validation interview'],
+];
+---
+<div id="contact" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12 col-xl-9 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Contact</span>
+            <h2 class="reveal-type" data-anim="revealType">Get in touch with MinT.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          <div class="col-12 col-xl-6 mxd-grid-item">
+            <div class="contact-coords" data-el-anim="inUp">
+              <div class="contact-coord"><span class="contact-coord__label">Phone</span><span class="contact-coord__value contact-coord__value--pending">To be provided by MinT</span></div>
+              <div class="contact-coord"><span class="contact-coord__label">Email</span><span class="contact-coord__value contact-coord__value--pending">To be provided by MinT</span></div>
+              <div class="contact-coord"><span class="contact-coord__label">Headquarters</span><span class="contact-coord__value">Ministry of Innovation and Technology, Addis Ababa, Ethiopia</span></div>
+            </div>
+            <div class="contact-channels" data-el-anim="inUp">
+              <span class="tag tag-s mxd-scramble">Support channels</span>
+              <ul>{channels.map((c) => <li>{c}</li>)}</ul>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mxd-grid-item">
+            <div class="contact-times" data-el-anim="inUp">
+              <span class="tag tag-s mxd-scramble">Response times</span>
+              <dl>
+                {times.map(([k, v]) => (<><dt>{k}</dt><dd>{v}</dd></>))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
