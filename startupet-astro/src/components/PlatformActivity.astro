@@ -1,0 +1,58 @@
+---
+// Platform Activity — live stats (spec section 2). Cards ship in a "coming
+// soon" state with a data-count hook so real numbers can drop in later.
+const stats = [
+  ['01', 'Applications Received', 'Startups registered and applications submitted since platform launch.'],
+  ['02', 'Startups Designated', 'Startups awarded official Designation Certificates with full access to benefits.'],
+  ['03', 'Regional Hubs Active', 'Regional STI hubs providing local support and mentorship across Ethiopia.'],
+];
+---
+<div class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-8 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Platform activity</span>
+            <h2 class="reveal-type" data-anim="revealType">A live national record, updated in real time.</h2>
+          </div>
+          <div class="col-12 col-xl-4 mxd-grid-item">
+            <div class="platform-activity__live" data-el-anim="inUp">
+              <span class="live-dot"></span><span class="mxd-scramble">Live</span>
+              <span class="live-clock" data-clock>00:00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          {stats.map(([n, title, desc]) => (
+            <div class="col-12 col-md-4 mxd-grid-item">
+              <div class="stat-card animate-card-3" data-count="pending">
+                <span class="stat-card__num tag tag-s">{n}</span>
+                <span class="stat-card__value">Coming soon</span>
+                <h3 class="stat-card__title">{title}</h3>
+                <p class="t-medium">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // running clock for the "Live" indicator
+  const el = document.querySelector('[data-clock]');
+  if (el) {
+    const tick = () => {
+      const d = new Date();
+      el.textContent = [d.getHours(), d.getMinutes(), d.getSeconds()]
+        .map((n) => String(n).padStart(2, '0')).join(':');
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+</script>

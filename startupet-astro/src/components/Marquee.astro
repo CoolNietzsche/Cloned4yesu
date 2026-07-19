@@ -1,0 +1,21 @@
+---
+// Credibility + stat strip as an infinite ticker (spec section 1).
+const items = [
+  'Proclamation No. 1396/2025', 'Ministry of Innovation and Technology',
+  'National Digital Economy Council', 'National Startup Designation Committee',
+  '3 Governance Tiers', '30–45 Day Review', '6 Sandbox Sectors', '2-Year Certificate Terms',
+];
+---
+<div class="mxd-section">
+  <div class="mxd-container fullwidth-container">
+    <div class="card__marquees">
+      <div class="marquee marquee-stack marquee--gsap muted-extra-opposite">
+        <div class="marquee__top">
+          {items.map((t) => (
+            <div class="marquee__item item-regular text"><p class="marquee__text text-with-gliph">{t}/</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

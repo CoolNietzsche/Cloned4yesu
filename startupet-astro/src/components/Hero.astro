@@ -1,0 +1,56 @@
+---
+// Hero: brand-motif cursor trail + headline (line reveal on load) + dataline.
+const trail = [
+  ['logo-transparent.png', 400, 521], ['seal-mark.svg', 412, 400],
+  ['panel-motif.svg', 485, 400], ['seal-mark.svg', 530, 400],
+  ['logo-transparent.png', 400, 520], ['panel-motif.svg', 407, 400],
+  ['seal-mark.svg', 400, 480], ['panel-motif.svg', 637, 400],
+  ['pm-abiy-ahmed.jpg', 400, 992],
+];
+---
+<div class="mxd-section mxd-hero-section no-padding-desktop mxd-hero-special cursor-trail-transparent loading-wrap">
+  <div class="mxd-trail-transparent-wrapper">
+    <div class="mxd-trail-transparent-content">
+      {trail.map(([f, w, h]) => (
+        <img alt="StartupET brand motif" class="mxd-trail-transparent-image" width={w} height={h} src={`/img/startupet/${f}`} />
+      ))}
+    </div>
+  </div>
+  <div class="mxd-hero-05">
+    <div class="mxd-hero-05__wrap">
+      <div class="mxd-hero-05__top">
+        <p class="hero-05__eyebrow loading-item"><span class="tag tag-m mxd-scramble">Established under Proclamation No. 1396/2025</span></p>
+        <div class="mxd-hero-05__headline">
+          <h1 class="loading-split" data-anim="splitLinesLoad">Ethiopia's<small>Startup Era Has Begun</small></h1>
+        </div>
+        <p class="hero-05__subhead loading-item">One national system to register your business, apply for Startup Designation, and access the incentives, funding mechanisms, and regional support available under the Startup Proclamation.</p>
+      </div>
+      <div class="mxd-hero-05__bottom">
+        <div class="mxd-hero-05__dataline">
+          <div class="hero-05-dataline__socials loading-item">
+            <ul class="mxd-socials-line"><li><a class="mxd-socials-line__link" href="#journey"><span class="mxd-scramble">StartupET</span></a></li></ul>
+          </div>
+          <p class="hero-05-dataline__caption loading-item">Official Startup Designation Platform</p>
+          <div class="hero-05-dataline__controls loading-item">
+            <a href="#about" class="btn btn-line-icon btn-line-icon-small btn-line-default slide-down">
+              <span class="btn-caption mxd-scramble">Scroll to explore</span>
+              <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M18,10.8h-3.6v-3.6h3.6v3.6ZM7.2,14.4v3.6h3.6v-3.6h3.6v-3.6h-3.6V0h-3.6v10.8h-3.6v3.6s3.6,0,3.6,0ZM3.6,10.8v-3.6H0v3.6h3.6Z"></path></svg></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mxd-section">
+  <div class="mxd-container fullwidth-container">
+    <div class="mxd-divider loading-fade">
+      <div class="mxd-divider__video" data-el-anim="clipImage">
+        <video poster="/video/1280x720_stone-geometry-banner.webp" preload="auto" autoplay muted loop playsinline>
+          <source src="/video/1280x720_stone-geometry.mp4" type="video/mp4" />
+          <source src="/video/1280x720_stone-geometry.webm" type="video/webm" />
+        </video>
+      </div>
+    </div>
+  </div>
+</div>

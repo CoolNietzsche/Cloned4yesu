@@ -1,0 +1,125 @@
+/* StartupET Astro overrides — minimal, layered on top of the verbatim theme CSS.
+   Mirrors the tweaks we made in the clone (light-mode pin so the wordmark stays
+   legible, logo image sizing) plus small fixes specific to the static build. */
+:root { color-scheme: light; }
+
+.mxd-logo__image, .menu-logo__image {
+  width: auto; height: 3.6rem; object-fit: contain; display: inline-block;
+}
+.menu-logo__image { height: 4rem; }
+
+/* the theme reveals split lines from a masked state; ensure content is never
+   left invisible if JS is disabled (progressive enhancement) */
+.no-js [data-anim], .no-js [data-el-anim] { opacity: 1 !important; }
+
+/* ============================================================
+   Section styling for the StartupET-specific blocks. Uses the
+   theme's own CSS custom properties so it sits in the same design
+   system as the verbatim template CSS.
+   ============================================================ */
+:root { --se-line: rgba(var(--base-opp-rgb), 0.12); }
+
+.mxd-grid-gap { gap: 2.4rem 0; }
+@media (min-width: 1200px) { .mxd-grid-gap { gap: 0; } }
+
+/* Hero eyebrow + subhead */
+.hero-05__eyebrow { margin-bottom: 1.6rem; }
+.hero-05__subhead {
+  max-width: 56rem; margin-top: 2.4rem;
+  font-size: 1.7rem; line-height: 1.5; color: var(--t-medium);
+}
+
+/* Platform activity — live indicator + stat cards */
+.platform-activity__live {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-family: var(--font-jetbrains-mono, monospace);
+  text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.3rem;
+}
+.platform-activity__live .live-dot {
+  width: 0.9rem; height: 0.9rem; border-radius: 50%;
+  background: #17b26a; box-shadow: 0 0 0 0 rgba(23,178,106,.5);
+  animation: se-pulse 1.8s infinite;
+}
+.platform-activity__live .live-clock { color: var(--t-muted); }
+@keyframes se-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(23,178,106,.5); }
+  70% { box-shadow: 0 0 0 0.8rem rgba(23,178,106,0); }
+  100% { box-shadow: 0 0 0 0 rgba(23,178,106,0); }
+}
+.stat-card {
+  height: 100%; padding: 3.2rem 2.8rem; margin: 0 1.2rem;
+  border: 1px solid var(--se-line); border-radius: 1.4rem;
+  background: rgba(var(--base-bright-rgb), 0.5);
+  display: flex; flex-direction: column; gap: 1.2rem;
+}
+.stat-card__num { color: var(--accent); }
+.stat-card__value {
+  font-size: 3.2rem; font-weight: 600; line-height: 1; color: var(--t-muted);
+}
+.stat-card__title { font-size: 1.9rem; margin: 0; }
+
+/* Mission / Vision cards */
+.mxd-mission-card {
+  height: 100%; padding: 3.6rem 3.2rem; margin: 0 1.2rem;
+  border-top: 2px solid var(--accent);
+  background: rgba(var(--base-bright-rgb), 0.45);
+  display: flex; flex-direction: column; gap: 1.6rem;
+}
+.mxd-mission-card .tag { color: var(--accent); align-self: flex-start; }
+
+/* Journey — pinned stacked cards */
+.journey-note { max-width: 34rem; color: var(--t-medium); }
+.journey-stack { position: relative; }
+.pinned-section { position: relative; min-height: 100vh; }
+.pinned-section__inner { position: sticky; top: 0; will-change: transform; }
+.pinned-section__trigger { display: none; }
+.journey-card {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center;
+  width: 100%; min-height: 100vh; padding: 8rem clamp(2rem, 6vw, 10rem);
+  background: var(--base-bright);
+  box-shadow: 0 -2.4rem 6rem rgba(var(--base-opp-rgb), 0.12);
+  border-top: 1px solid var(--se-line);
+}
+@media (max-width: 1199px) {
+  .pinned-section { min-height: auto; }
+  .journey-card { grid-template-columns: 1fr; min-height: auto; gap: 2.4rem; padding: 6rem 2rem; }
+}
+.journey-card__num { color: var(--accent); }
+.journey-card__title { font-size: clamp(3.6rem, 6vw, 6.4rem); line-height: 1; margin: 1.6rem 0; }
+.journey-card__chips { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+.journey-card__body { max-width: 44rem; color: var(--t-medium); }
+.journey-card__seal { display: flex; justify-content: center; opacity: 0.9; }
+.journey-card__seal img { width: min(22rem, 40vw); height: auto; }
+
+/* profile.status terminal widget */
+.profile-status {
+  border-radius: 1.2rem; overflow: hidden; border: 1px solid var(--se-line);
+  background: #0f1115; color: #d7dde5; font-family: var(--font-jetbrains-mono, monospace);
+  box-shadow: 0 3rem 6rem rgba(0,0,0,.25); max-width: 44rem; margin-inline: auto; width: 100%;
+}
+.profile-status__bar {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 1.1rem 1.4rem; background: #171a21; font-size: 1.2rem;
+}
+.profile-status__bar .dot { width: 0.9rem; height: 0.9rem; border-radius: 50%; background: #3a3f4b; }
+.profile-status__bar .dot:nth-child(1){ background:#ff5f56 } .profile-status__bar .dot:nth-child(2){ background:#ffbd2e } .profile-status__bar .dot:nth-child(3){ background:#27c93f }
+.profile-status__file { margin-left: 0.6rem; color: #8a93a3; }
+.profile-status__badge { margin-left: auto; padding: 0.2rem 0.9rem; border-radius: 999px; background: rgba(255,189,46,.15); color: #ffbd2e; font-size: 1.1rem; }
+.profile-status__body { margin: 0; padding: 1.8rem 1.6rem; font-size: 1.35rem; line-height: 2; white-space: pre; }
+.profile-status__body .ln { display: block; }
+.profile-status__body i { display: inline-block; width: 2.2rem; color: #4b5566; font-style: normal; }
+.profile-status__body b { font-weight: 500; }
+.profile-status__body .ok { color: #27c93f; } .profile-status__body .pending { color: #ffbd2e; }
+
+/* Footer */
+.mxd-footer { padding: 8rem 0 4rem; border-top: 1px solid var(--se-line); }
+.footer-headline { font-size: clamp(2.4rem, 4vw, 4.4rem); line-height: 1.1; }
+.mxd-footer__bottom { margin-top: 6rem; gap: 1.2rem 0; }
+.footer-data { color: var(--t-muted); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.footer-data.justify-end { text-align: left; }
+@media (min-width: 1200px) { .footer-data.justify-end { text-align: right; } }
+
+/* The page-transition panel is a full-screen black overlay the original JS
+   parks off-screen after an intro wipe. Park it by default so it never covers
+   the page; animations.js plays the intro wipe on load. */
+.mxd-page-transition { transform: translateY(-100%); }

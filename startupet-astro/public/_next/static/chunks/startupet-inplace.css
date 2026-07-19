@@ -1,0 +1,66 @@
+/* StartupET — minimal CSS-only overrides for the in-place repurposed
+   index-creative-agency template. Never touches structure/hydration —
+   safe to load alongside the original theme CSS. */
+
+/* Portfolio showcase repurposed as eligibility-pathway cards: the original
+   template pairs each preview with a fictional "client" logo, which has no
+   honest equivalent here, so it's hidden rather than replaced with a fake mark. */
+.mxd-project-item__logowrap {
+  display: none !important;
+}
+
+/* Real StartupET wordmark (dark type on transparent) replacing the hand-drawn
+   mascot mark. Pin the theme to its light palette so the mark stays legible
+   regardless of the visitor's OS/manual dark-mode preference, and give it a
+   readable, non-stretched box since it's now a raster image, not a scalable path. */
+.mxd-logo__image,
+.menu-logo__image {
+  width: auto;
+  height: 3.6rem;
+  object-fit: contain;
+  display: inline-block;
+}
+.menu-logo__image {
+  height: 4rem;
+}
+
+/* Committee section (team page repurposed): each row now describes a
+   mandate/composition fact rather than a person, so the fake social links
+   have no honest equivalent and are hidden; the headshot photo is replaced
+   with the StartupET seal mark and given padding so it reads as an icon,
+   not a stretched photo. */
+.mxd-team-list__socials {
+  display: none !important;
+}
+.mxd-team-list__photo img {
+  object-fit: contain !important;
+  padding: 2.4rem;
+  background: var(--base-tint);
+}
+
+:root {
+  --base: var(--base--light);
+  --base-rgb: var(--base-rgb--light);
+  --base-tint: var(--base-tint--light);
+  --base-tint-rgb: var(--base-tint-rgb--light);
+  --base-bright: var(--base-bright--light);
+  --base-bright-rgb: var(--base-bright-rgb--light);
+  --accent: var(--accent--light);
+  --highlight: var(--highlight--light);
+  --base-opp: var(--base-opp--light);
+  --base-opp-rgb: var(--base-opp-rgb--light);
+  --t-bright: var(--t-bright--light);
+  --t-medium: var(--t-medium--light);
+  --t-muted: var(--t-muted--light);
+  --t-muted-extra: var(--t-muted-extra--light);
+  --t-opp-bright: var(--t-opp-bright--light);
+  --t-opp-medium: var(--t-opp-medium--light);
+  --t-opp-muted: var(--t-opp-muted--light);
+  --t-opp-muted-extra: var(--t-opp-muted-extra--light);
+  --st-muted: var(--st-muted--light);
+  --st-medium: var(--st-medium--light);
+  --st-bright: var(--st-bright--light);
+}
+html {
+  color-scheme: light;
+}
