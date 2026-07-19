@@ -24,6 +24,20 @@
   height: 4rem;
 }
 
+/* Committee section (team page repurposed): each row now describes a
+   mandate/composition fact rather than a person, so the fake social links
+   have no honest equivalent and are hidden; the headshot photo is replaced
+   with the StartupET seal mark and given padding so it reads as an icon,
+   not a stretched photo. */
+.mxd-team-list__socials {
+  display: none !important;
+}
+.mxd-team-list__photo img {
+  object-fit: contain !important;
+  padding: 2.4rem;
+  background: var(--base-tint);
+}
+
 :root {
   --base: var(--base--light);
   --base-rgb: var(--base-rgb--light);
