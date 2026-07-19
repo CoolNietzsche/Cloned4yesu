@@ -198,3 +198,44 @@
   color: var(--t-opp-bright); font-size: 1.5rem;
 }
 .alt-track__badge::before { content: ""; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--accent); flex: none; }
+
+/* ============================================================
+   Dark-mode + mega-menu polish
+   ============================================================ */
+
+/* Swap to the flag-colour-preserving light wordmark in dark mode
+   (black text -> white, Ethiopian colours kept). */
+:root[color-scheme="dark"] .mxd-logo__image,
+:root[color-scheme="dark"] .menu-logo__image {
+  content: url("/img/startupet/logo-dark.png");
+}
+
+/* Menu media panel now carries a static brand motif instead of the video. */
+.menu-media__wrapper { overflow: hidden; height: 100%; background: var(--base-tint); display: flex; align-items: center; justify-content: center; }
+.menu-media__wrapper img { width: 78%; height: auto; opacity: 0.9; }
+
+/* Menu eyebrow + right-hand info panel */
+.mxd-menu__caption .menu-flag { font-size: 1.2em; }
+.menu-info { display: flex; flex-direction: column; gap: 1rem; }
+.menu-info__label { font-size: 1.6rem; font-weight: 600; }
+.menu-info__text { color: var(--t-medium); max-width: 34rem; }
+.menu-info__text--muted { color: var(--t-muted); }
+.menu-info__links { list-style: none; margin: 1.6rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.menu-info__links a { color: var(--t-muted); text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.3rem; transition: color .3s; }
+.menu-info__links a:hover { color: var(--t-bright); }
+
+/* line-mask reveal wrappers for menu text (JS animates .menu-line) */
+.menu-line { display: inline-block; will-change: transform; }
+.main-menu__number .menu-line, .main-menu__caption .menu-line,
+.menu-info .menu-line { display: inline-block; }
+.main-menu__link .menu-line,
+.menu-info__label .menu-line, .menu-info__text .menu-line, .menu-info__links .menu-line { overflow: hidden; }
+
+.mxd-menu__footer { margin-top: 3rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* Dark-mode: the alt-track panel already uses base-opp; make sure the stat/
+   feature/journey card backgrounds read correctly against the dark base. */
+:root[color-scheme="dark"] .journey-card { background: var(--base-tint); }
+:root[color-scheme="dark"] .thresholds__tab.is-active,
+:root[color-scheme="dark"] .thresholds__panels { background: var(--base-tint); }
+:root[color-scheme="dark"] .profile-status { border-color: rgba(255,255,255,0.08); }
