@@ -1,0 +1,291 @@
+[
+  {
+    "page": "/",
+    "url": "http://127.0.0.1:8890/",
+    "console_messages": [],
+    "failed_requests": [
+      {
+        "url": "http://127.0.0.1:8890/video/900x1280_menu.mp4",
+        "method": "GET",
+        "failure": "net::ERR_ABORTED",
+        "resource_type": "media",
+        "classification": "functional"
+      }
+    ],
+    "page_errors": [
+      "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "interactive_probe": {
+      "menu_trigger_found": true,
+      "menu_state_changed": true,
+      "menu_before": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis"
+      },
+      "menu_after": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger active",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis lenis-stopped"
+      },
+      "slider_found": true,
+      "slider_next_button_found": true,
+      "slider_dom_changed_after_click": false,
+      "video_count": 1,
+      "videos": [
+        {
+          "src": "http://127.0.0.1:8890/video/900x1280_menu.mp4",
+          "readyState": 4,
+          "paused": false,
+          "autoplay": true,
+          "error": null,
+          "networkState": 1,
+          "videoWidth": 900,
+          "videoHeight": 1280
+        }
+      ],
+      "custom_cursor_found": true,
+      "cursor_style_changed_on_mousemove": false,
+      "forms": []
+    },
+    "load_error": null
+  },
+  {
+    "page": "/404/",
+    "url": "http://127.0.0.1:8890/404/",
+    "console_messages": [],
+    "failed_requests": [],
+    "page_errors": [
+      "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "interactive_probe": {
+      "menu_trigger_found": true,
+      "menu_state_changed": true,
+      "menu_before": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis"
+      },
+      "menu_after": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger active",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis lenis-stopped"
+      },
+      "slider_found": false,
+      "video_count": 1,
+      "videos": [
+        {
+          "src": "http://127.0.0.1:8890/video/900x1280_menu.mp4",
+          "readyState": 4,
+          "paused": false,
+          "autoplay": true,
+          "error": null,
+          "networkState": 1,
+          "videoWidth": 900,
+          "videoHeight": 1280
+        }
+      ],
+      "custom_cursor_found": true,
+      "cursor_style_changed_on_mousemove": false,
+      "forms": []
+    },
+    "load_error": null
+  },
+  {
+    "page": "/_next/image/index__P3VybD0lMkZpbWclMkZ3b3JrcyUyRjE5MjB4MTI4",
+    "url": "http://127.0.0.1:8890/_next/image/index__P3VybD0lMkZpbWclMkZ3b3JrcyUyRjE5MjB4MTI4",
+    "console_messages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "location": {
+          "url": "http://127.0.0.1:8890/_next/image/index__P3VybD0lMkZpbWclMkZ3b3JrcyUyRjE5MjB4MTI4",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      }
+    ],
+    "failed_requests": [
+      {
+        "url": "http://127.0.0.1:8890/_next/image/index__P3VybD0lMkZpbWclMkZ3b3JrcyUyRjE5MjB4MTI4",
+        "status": 404,
+        "resource_type": "document",
+        "classification": "functional"
+      }
+    ],
+    "page_errors": [],
+    "interactive_probe": {
+      "menu_trigger_found": false,
+      "slider_found": false,
+      "video_count": 0,
+      "videos": [],
+      "custom_cursor_found": false,
+      "forms": []
+    },
+    "load_error": null
+  },
+  {
+    "page": "/about-me/",
+    "url": "http://127.0.0.1:8890/about-me/",
+    "console_messages": [],
+    "failed_requests": [],
+    "page_errors": [
+      "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "interactive_probe": {
+      "menu_trigger_found": true,
+      "menu_state_changed": true,
+      "menu_before": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis"
+      },
+      "menu_after": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger active",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis lenis-stopped"
+      },
+      "slider_found": true,
+      "slider_next_button_found": true,
+      "slider_dom_changed_after_click": false,
+      "video_count": 1,
+      "videos": [
+        {
+          "src": "http://127.0.0.1:8890/video/900x1280_menu.mp4",
+          "readyState": 4,
+          "paused": false,
+          "autoplay": true,
+          "error": null,
+          "networkState": 1,
+          "videoWidth": 900,
+          "videoHeight": 1280
+        }
+      ],
+      "custom_cursor_found": true,
+      "cursor_style_changed_on_mousemove": false,
+      "forms": []
+    },
+    "load_error": null
+  },
+  {
+    "page": "/about-us/",
+    "url": "http://127.0.0.1:8890/about-us/",
+    "console_messages": [],
+    "failed_requests": [],
+    "page_errors": [
+      "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "interactive_probe": {
+      "menu_trigger_found": true,
+      "menu_state_changed": true,
+      "menu_before": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis"
+      },
+      "menu_after": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger active",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis lenis-stopped"
+      },
+      "slider_found": false,
+      "video_count": 1,
+      "videos": [
+        {
+          "src": "http://127.0.0.1:8890/video/900x1280_menu.mp4",
+          "readyState": 4,
+          "paused": false,
+          "autoplay": true,
+          "error": null,
+          "networkState": 1,
+          "videoWidth": 900,
+          "videoHeight": 1280
+        }
+      ],
+      "custom_cursor_found": true,
+      "cursor_style_changed_on_mousemove": false,
+      "forms": []
+    },
+    "load_error": null
+  },
+  {
+    "page": "/blog-article/",
+    "url": "http://127.0.0.1:8890/blog-article/",
+    "console_messages": [],
+    "failed_requests": [],
+    "page_errors": [
+      "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "interactive_probe": {
+      "menu_trigger_found": true,
+      "menu_state_changed": true,
+      "menu_before": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis"
+      },
+      "menu_after": {
+        "bodyClass": "manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable",
+        "triggerClass": "mxd-menu__hamburger active",
+        "triggerAria": null,
+        "navClass": "mxd-menu mxd-menu--gsap",
+        "navVisible": true,
+        "htmlClass": "no-touch lenis lenis-stopped"
+      },
+      "slider_found": false,
+      "video_count": 1,
+      "videos": [
+        {
+          "src": "http://127.0.0.1:8890/video/900x1280_menu.mp4",
+          "readyState": 4,
+          "paused": false,
+          "autoplay": true,
+          "error": null,
+          "networkState": 1,
+          "videoWidth": 900,
+          "videoHeight": 1280
+        }
+      ],
+      "custom_cursor_found": true,
+      "cursor_style_changed_on_mousemove": false,
+      "forms": [
+        {
+          "action": "http://127.0.0.1:8890/blog-article/",
+          "method": "get",
+          "has_submit_handler_attr": false,
+          "field_count": 3
+        }
+      ]
+    },
+    "load_error": null
+  }
+]
