@@ -1,0 +1,5 @@
+/* StartupET — Astro build.
+   The light-mode variable pin that the clone used (to force the wordmark
+   legible) is intentionally NOT here: the Astro build has a real light/dark
+   toggle, so the theme's [color-scheme=dark] rules must stay in effect.
+   Logo sizing + dark-mode logo swap live in /styles/startupet.css. */

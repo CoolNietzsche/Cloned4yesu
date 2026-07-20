@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="StartupET brand motif">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b6e4f"/>
+      <stop offset="100%" stop-color="#0f9d63"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="800" fill="url(#g1)"/>
+  <rect width="800" height="800" fill="url(#grid)"/>
+  <circle cx="400" cy="400" r="230" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+  <circle cx="400" cy="400" r="150" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"/>
+  <g stroke="#d99c19" stroke-width="6" stroke-linecap="round" opacity="0.9">
+    <path d="M400 250 L400 550" />
+    <path d="M250 400 L550 400" />
+  </g>
+  <circle cx="400" cy="400" r="26" fill="#ffffff"/>
+  <circle cx="400" cy="400" r="26" fill="none" stroke="#d99c19" stroke-width="4"/>
+</svg>

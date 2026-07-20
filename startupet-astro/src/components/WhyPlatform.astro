@@ -1,0 +1,38 @@
+---
+// Why This Platform — 4 value props (spec section 4).
+const cards = [
+  ['01', 'One Legal Pathway', 'Every designation decision is made against the criteria published in Proclamation No. 1396/2025 — not informal discretion.'],
+  ['02', 'A Single Point of Entry', 'Register once nationally instead of navigating separate regional business bureaucracies.'],
+  ['03', 'Transparent Status Tracking', 'Know exactly where your application stands — from document submission through committee review to certificate issuance.'],
+  ['04', 'A Direct Line to Incentives', 'Designation is the qualifying step for corporate tax relief, customs duty exemptions on capital goods, credit guarantees, and public procurement access.'],
+];
+---
+<div class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12 col-xl-9 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Why this platform</span>
+            <h2 class="reveal-type" data-anim="revealType">What the Platform Establishes.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          {cards.map(([n, title, body]) => (
+            <div class="col-12 col-md-6 col-xl-3 mxd-grid-item">
+              <div class="feature-card animate-card-4">
+                <span class="feature-card__num">{n}</span>
+                <h3 class="feature-card__title">{title}</h3>
+                <p class="t-medium">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

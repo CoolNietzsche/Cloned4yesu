@@ -1,0 +1,50 @@
+---
+// FAQ accordion (spec section 17).
+const faqs = [
+  ['What is the StartupET platform?', 'The single national portal established under Proclamation No. 1396/2025, for founders seeking Startup Designation and for regional technology hub administrators reporting to the Ministry of Innovation and Technology.'],
+  ['Who is eligible to apply for Startup Designation?', 'Private businesses (not public share companies) that meet the innovation, equity, and structural criteria set out in the Proclamation — see Eligibility above.'],
+  ['What is a Designation Certificate, and how long is it valid?', 'Formal proof, issued by the Ministry with a verification QR code, that a business has been evaluated and approved. Certificates are valid for 2 years, renewable, up to a cumulative maximum of 8 years.'],
+  ['Does registering on the platform guarantee Designation?', 'No. Registration begins the review process. Designation is granted only after Committee Review confirms the application meets all published criteria.'],
+  ['What benefits does Startup Designation unlock?', 'Tax relief, the National Credit Guarantee Scheme, public procurement preferences, and — for eligible sectors — participation in the regulatory sandbox.'],
+  ['What happens if my application is rejected?', 'Details on the review and reapplication process will be published here as the Proclamation’s implementing directives are finalized.'],
+  ['How is my data protected on the platform?', 'SSL/TLS encryption in transit, AES encryption at rest, role-based access control, and a full audit trail — see Security above.'],
+  ['Can founders from outside Ethiopia apply?', 'Details will be published here as eligibility guidance is finalized.'],
+];
+---
+<div id="faq" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12 col-xl-9 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">FAQ</span>
+            <h2 class="reveal-type" data-anim="revealType">Frequently asked questions.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="faq" data-el-anim="inUp">
+        {faqs.map(([q, a], i) => (
+          <div class:list={["faq-item", { 'is-open': i === 0 }]}>
+            <button class="faq-item__q" aria-expanded={i === 0 ? 'true' : 'false'}>
+              <span class="faq-item__idx">{String(i + 1).padStart(2, '0')}</span>
+              <span class="faq-item__question">{q}</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p class="t-medium">{a}</p></div></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.faq-item__q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+</script>

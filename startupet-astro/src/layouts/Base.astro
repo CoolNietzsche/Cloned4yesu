@@ -1,0 +1,66 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "StartupET | Ethiopia's Official Startup Designation Platform",
+  description = "Ethiopia's official platform for startup designation under Proclamation No. 1396/2025 — one legal pathway from registration to certificate.",
+} = Astro.props;
+
+// The template's compiled theme CSS, kept byte-identical so the look matches
+// exactly. Order + relative /media paths are preserved from the original build.
+const themeCss = [
+  '/_next/static/chunks/0kje620jsbjcr.css',
+  '/_next/static/chunks/0b3~ey51ozhxi.css',
+  '/_next/static/chunks/135.wsn_sc2de.css',
+  '/_next/static/chunks/0_6n635zsw8mc.css',
+];
+---
+<!doctype html>
+<html lang="en" class="no-touch lenis" color-scheme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Set the saved theme before first paint to avoid a flash of the wrong mode.
+      try {
+        var t = localStorage.getItem('startupet-theme');
+        if (t) document.documentElement.setAttribute('color-scheme', t);
+      } catch (e) {}
+    </script>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/img/startupet/logo-transparent.png" type="image/png" />
+    {themeCss.map((href) => <link rel="stylesheet" href={href} />)}
+    <link rel="stylesheet" href="/_next/static/chunks/startupet-inplace.css" />
+    <link rel="stylesheet" href="/styles/startupet.css" />
+  </head>
+  <body
+    class="manrope_b7d5735e-module__suUhcW__variable jetbrains_mono_707233f-module__9hS9bG__variable"
+    style="--_font-default: var(--font-manrope); --_font-accent: var(--font-jetbrains-mono);"
+  >
+    <div class="blur-container" aria-hidden="true">
+      <div class="blur-layer blur-1"></div><div class="blur-layer blur-2"></div>
+      <div class="blur-layer blur-3"></div><div class="blur-layer blur-4"></div>
+      <div class="blur-layer blur-5"></div><div class="blur-layer blur-6"></div>
+      <div class="blur-layer blur-7"></div><div class="blur-layer blur-8"></div>
+    </div>
+    <div class="mxd-page-transition" aria-hidden="true"></div>
+    <div id="mxd-cursor" class="mxd-cursor" aria-hidden="true">
+      <div class="mxd-cursor__dot"></div>
+      <p class="mxd-cursor__text">&nbsp;</p>
+      <div class="mxd-cursor__image"></div>
+    </div>
+
+    <slot />
+
+    <script>
+      import { initAnimations } from '../lib/animations.js';
+      initAnimations();
+    </script>
+  </body>
+</html>

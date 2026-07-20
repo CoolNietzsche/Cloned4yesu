@@ -1,0 +1,41 @@
+---
+// Footer (spec section 20) — wordmark, tagline, three link columns,
+// language toggle, legal line, and a live-status indicator.
+const year = new Date().getFullYear();
+const columns = [
+  ['Platform', [['About', '#about'], ['Eligibility', '#eligibility'], ['Capabilities', '#capabilities'], ['Governance', '#governance']]],
+  ['Services', [['Startup Registration', '#journey'], ['Regional Hub Portal', '#network'], ['Startup Proclamation', '#resources'], ['Certificate Verification', '#resources']]],
+  ['Legal', [['Privacy', '#0'], ['Terms', '#0'], ['Security', '#0']]],
+];
+---
+<footer class="mxd-footer blur-section">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-wordmark mxd-split-lines" data-anim="splitLines">StartupET Platform</p>
+          <p class="footer-tagline t-medium">The national system for registering, designating, and monitoring Ethiopia’s science, technology, and innovation ecosystem.</p>
+          <div class="footer-lang" role="group" aria-label="Language">
+            <button class="footer-lang__btn is-active" type="button">EN</button>
+            <span aria-hidden="true">·</span>
+            <button class="footer-lang__btn" type="button">አማ</button>
+          </div>
+        </div>
+        <div class="footer-cols">
+          {columns.map(([title, links]) => (
+            <div class="footer-col">
+              <span class="footer-col__title">{title}</span>
+              <ul>{links.map(([label, href]) => <li><a href={href}><span class="mxd-scramble">{label}</span></a></li>)}</ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="footer-bottom">
+        <p class="footer-data"><span>Federal Democratic Republic of Ethiopia · StartupET Platform · {year}</span></p>
+        <p class="footer-status"><span class="live-dot"></span><span class="mxd-scramble">All systems operational</span></p>
+      </div>
+    </div>
+  </div>
+</footer>

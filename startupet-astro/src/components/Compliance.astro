@@ -1,0 +1,38 @@
+---
+// Compliance & Renewal — 4 cards (spec section 12).
+const cards = [
+  ['01', 'Certificate Validity', '2-year terms, renewable, capped at 8 total years from incorporation.'],
+  ['02', 'Ecosystem Builder Certificates', '5-year terms, renewable upon successful review.'],
+  ['03', 'Notification Requirement', 'Startups must notify the Ministry within 10 days of any change to corporate structure or equity.'],
+  ['04', 'Periodic Reporting', 'Required reporting on how tax exemptions and incentives are being used.'],
+];
+---
+<div class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12 col-xl-9 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Compliance</span>
+            <h2 class="reveal-type" data-anim="revealType">Compliance &amp; Renewal.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          {cards.map(([n, title, body]) => (
+            <div class="col-12 col-md-6 col-xl-3 mxd-grid-item">
+              <div class="feature-card animate-card-4">
+                <span class="feature-card__num">{n}</span>
+                <h3 class="feature-card__title">{title}</h3>
+                <p class="t-medium">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

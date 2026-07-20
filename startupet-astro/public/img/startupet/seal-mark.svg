@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" role="img" aria-label="StartupET official mark">
+  <circle cx="150" cy="150" r="148" fill="#eeeae8"/>
+  <circle cx="150" cy="150" r="132" fill="none" stroke="#0b6e4f" stroke-width="3"/>
+  <circle cx="150" cy="150" r="118" fill="none" stroke="#0b6e4f" stroke-width="1" stroke-dasharray="2 6"/>
+  <path d="M100 160 L136 196 L206 116" fill="none" stroke="#0b6e4f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,27 @@
+---
+// Alternate Track — Accredited Ecosystem Builder Designation (spec section 7).
+const badges = [
+  '5-year certificate terms', 'Renewable upon successful review',
+  'Access to startup network and data', 'Recognition as official ecosystem partner',
+];
+---
+<div class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block">
+      <div class="alt-track" data-el-anim="inUp">
+        <div class="alt-track__head">
+          <span class="tag tag-s mxd-scramble">Alternate Track</span>
+          <h2 class="reveal-type" data-anim="revealType">Accredited Ecosystem Builder Designation.</h2>
+        </div>
+        <div class="alt-track__body">
+          <p class="t-large">A separate track for incubators, accelerators, co-working spaces, venture capital firms, and innovation research organizations that support the ecosystem rather than operate as startups themselves.</p>
+          <ul class="alt-track__badges">
+            {badges.map((b) => (
+              <li class="alt-track__badge"><span class="mxd-scramble">{b}</span></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

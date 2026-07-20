@@ -1,0 +1,41 @@
+---
+// Incentives — Financial Infrastructure & Policy Support (spec section 10).
+const cards = [
+  ['01', 'National Credit Guarantee Scheme', 'Supervised alongside the National Bank of Ethiopia. Provides credit guarantees directly to commercial lenders, reducing the collateral barrier for early-stage designated startups.'],
+  ['02', 'Public Procurement Preferences (B2G)', 'Designated startups get preferential evaluation on public-sector technology contracts, establishing government as an early anchor customer and validating product-market fit.'],
+  ['03', 'Tax Relief & Incentives', 'Tax holidays, exemptions on imported capital equipment, and reduced corporate income tax rates during the certification period. Full details are provided upon designation.'],
+];
+---
+<div id="incentives" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-8 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Incentives</span>
+            <h2 class="reveal-type" data-anim="revealType">Financial Infrastructure &amp; Policy Support.</h2>
+          </div>
+          <div class="col-12 col-xl-4 mxd-grid-item">
+            <p class="section-intro t-medium" data-el-anim="inUp">Designation unlocks direct financial mechanisms coordinated through the Ministry and the National Bank of Ethiopia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          {cards.map(([n, title, body]) => (
+            <div class="col-12 col-md-4 mxd-grid-item">
+              <div class="feature-card animate-card-3">
+                <span class="feature-card__num">{n}</span>
+                <h3 class="feature-card__title">{title}</h3>
+                <p class="t-medium">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p class="section-footnote" data-el-anim="inUp">Full details on eligibility and application for each incentive are provided upon Startup Designation.</p>
+    </div>
+  </div>
+</div>

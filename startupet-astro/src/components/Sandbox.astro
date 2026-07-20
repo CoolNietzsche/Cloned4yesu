@@ -1,0 +1,61 @@
+---
+// Regulatory Sandbox (spec section 11).
+const sectors = ['Fintech', 'Insurtech', 'Healthtech', 'Agritech', 'Edtech', 'Legaltech'];
+const relaxations = [
+  'Exemption from standard capital deposit minimums',
+  'Modified transaction limits for pilot-stage testing',
+  'Shared KYC infrastructure access across sandbox participants',
+];
+const steps = [
+  ['01', 'Application', 'Submit a sandbox request with product details, compliance plan, and timeline. The Ministry evaluates jointly with the relevant sector regulator.'],
+  ['02', 'Live Testing', 'Operate under a sandbox license with defined scope, customer limits, and regulatory monitoring.'],
+  ['03', 'Reporting', 'Regular reporting on activity, user feedback, incidents, and compliance status.'],
+  ['04', 'Full License Path', 'Successful completion creates a defined pathway to full regulatory licensing.'],
+];
+---
+<div id="sandbox" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-7 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Regulated Sectors</span>
+            <h2 class="reveal-type" data-anim="revealType">National Regulatory Sandbox.</h2>
+          </div>
+          <div class="col-12 col-xl-5 mxd-grid-item">
+            <p class="section-intro t-medium" data-el-anim="inUp">For regulated sectors, the Ministry can authorize designated startups to legally test new products and business models in a live market under relaxed regulatory constraints — with a defined path to full licensing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mxd-block">
+      <div class="sandbox-meta" data-el-anim="inUp">
+        <div class="sandbox-sectors">
+          <span class="sandbox-label tag tag-s">Eligible sectors</span>
+          <ul class="pill-list">{sectors.map((s) => <li class="pill mxd-scramble">{s}</li>)}</ul>
+        </div>
+        <div class="sandbox-relax">
+          <span class="sandbox-label tag tag-s">Illustrative relaxations <em>(examples only)</em></span>
+          <ul class="sandbox-relax__list">{relaxations.map((r) => <li>{r}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mxd-block">
+      <div class="container-fluid p-0">
+        <div class="row g-0 mxd-grid-gap">
+          {steps.map(([n, title, body]) => (
+            <div class="col-12 col-md-6 col-xl-3 mxd-grid-item">
+              <div class="feature-card animate-card-4">
+                <span class="feature-card__num">{n}</span>
+                <h3 class="feature-card__title">{title}</h3>
+                <p class="t-medium">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

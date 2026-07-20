@@ -1,0 +1,114 @@
+---
+// Fixed header bar + full mega-menu overlay. Uses the template's own
+// .mxd-menu / .main-menu classes so the copied theme CSS styles it 1:1;
+// animations.js drives the clip-path reveal, staggered line reveals, and
+// backdrop blur (reverse-engineered from the original timeline).
+const nav = [
+  ['01', 'About', '#about'],
+  ['02', 'Why StartupET', '#about'],
+  ['03', 'Eligibility', '#eligibility'],
+  ['04', 'Journey', '#journey'],
+  ['05', 'Apply', '#journey'],
+];
+const year = new Date().getFullYear();
+---
+<header id="header" class="mxd-header">
+  <div class="mxd-header__logo loading-fade">
+    <a class="mxd-logo" href="/">
+      <img alt="StartupET" class="mxd-logo__image" height="61" width="160" src="/img/startupet/logo-transparent.png" />
+      <div class="mxd-logo__text">
+        <span class="mxd-scramble">StartupET</span><span class="mxd-scramble">Ethiopia</span>
+      </div>
+    </a>
+  </div>
+  <div class="mxd-header__controls loading-fade">
+    <a class="btn mxd-header__link slide-right" aria-label="Apply for Designation" href="#journey" data-cursor-text="Apply">
+      <span class="btn-caption"><span class="mxd-scramble">Apply for Designation</span></span>
+      <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M3.1,15.6h2.4v2.4h-2.4v-2.4ZM10.2,18h2.4v-2.4h-2.4v2.4ZM14.9,4.7H5.5V0H.8v2.4h2.4v11.8h9.4v-2.4h-7.1v-4.7h9.4v2.4h2.4v-4.7h-2.4ZM12.5,11.8h2.4v-2.4h-2.4v2.4Z"></path></svg></i>
+    </a>
+    <button id="color-switcher" class="btn mxd-color-switcher" type="button" role="switch" aria-label="light/dark mode" aria-checked="false">
+      <span class="switcher-text">Night</span>
+      <span class="switcher-icon night"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M7.7,0h7.7v2.6h-2.6v2.6h-2.6v7.7h2.6v2.6h2.6v2.6h-7.7v-2.6h-2.6v-2.6h-2.6v-7.7h2.6v-2.6h2.6V0Z"></path></svg></span>
+    </button>
+  </div>
+</header>
+
+<div class="mxd-menu__contain loading-fade">
+  <div class="mxd-menu__toggle">
+    <a href="#0" class="mxd-menu__hamburger" aria-label="Menu">
+      <div class="hamburger__line"></div><div class="hamburger__line"></div>
+    </a>
+  </div>
+</div>
+
+<nav class="mxd-menu mxd-menu--gsap">
+  <div class="mxd-menu__backdrop"></div>
+  <div class="mxd-menu__overlay">
+    <div class="mxd-menu__content" data-lenis-prevent>
+      <div class="mxd-menu__logo">
+        <a class="menu-logo" href="/">
+          <img alt="StartupET" class="menu-logo__image" height="61" width="160" src="/img/startupet/logo-transparent.png" />
+        </a>
+      </div>
+
+      <div class="mxd-menu__media">
+        <div class="menu-media__wrapper">
+          <img src="/img/startupet/panel-motif.svg" alt="" width="900" height="1280" />
+        </div>
+      </div>
+
+      <div class="mxd-menu__navigation">
+        <div class="mxd-menu__inner">
+          <div class="mxd-menu__caption">
+            <p>
+              <span class="menu-flag">🇪🇹</span> Official Startup Designation
+              for Ethiopian innovators
+            </p>
+          </div>
+
+          <div class="mxd-menu__left">
+            <div class="main-menu">
+              <div class="main-menu__content">
+                <ul id="main-menu" class="main-menu__accordion">
+                  {nav.map(([n, label, href]) => (
+                    <li class="main-menu__item">
+                      <div class="main-menu__divider divider-top"></div>
+                      <a class="main-menu__toggle" href={href}>
+                        <p class="main-menu__link">
+                          <span class="main-menu__number"><span class="menu-line">/ {n}</span></span>
+                          <span class="main-menu__caption"><span class="menu-line">{label}</span></span>
+                        </p>
+                        <div class="main-menu__arrow">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M10.8,0v3.6h-3.6V0h3.6ZM14.4,10.8h3.6v-3.6h-3.6v-3.6h-3.6v3.6H0v3.6h10.8v3.6h3.6v-3.6ZM10.8,14.4h-3.6v3.6h3.6v-3.6Z"></path></svg>
+                        </div>
+                      </a>
+                    </li>
+                  ))}
+                  <li class="main-menu__item"><div class="main-menu__divider divider-top"></div></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mxd-menu__right">
+            <div class="menu-info">
+              <p class="menu-info__label"><span class="menu-line">Apply through the platform</span></p>
+              <p class="menu-info__text"><span class="menu-line">Independent governance under Proclamation No. 1396/2025</span></p>
+              <p class="menu-info__text menu-info__text--muted"><span class="menu-line">Ministry of Innovation and Technology, Addis Ababa</span></p>
+              <ul class="menu-info__links">
+                <li><a href="#about"><span class="menu-line">About</span></a></li>
+                <li><a href="#eligibility"><span class="menu-line">Eligibility</span></a></li>
+                <li><a href="#journey"><span class="menu-line">Journey</span></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mxd-menu__footer">
+            <p class="footer-data"><span>Made with care by the Ministry of Innovation and Technology</span></p>
+            <p class="footer-data justify-end"><span>Copyright StartupET ©{year}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

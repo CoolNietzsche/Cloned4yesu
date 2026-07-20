@@ -1,0 +1,69 @@
+---
+// Journey — Registration to Certificate (spec section 8). Roman-numeral I–IV
+// steps rendered as pinned stacked cards (the pin/shrink/fade on scroll matches
+// the template's services stack exactly). Step I carries the profile.status
+// terminal widget.
+const steps = [
+  { n: 'I', title: 'Register', chips: ['Company info', 'Leadership details', 'Product description'],
+    body: 'Create an account and build your business profile: foundational company information, leadership details, and product description.' },
+  { n: 'II', title: 'Submit Documents', chips: ['Business registration', 'Financial statements', 'Innovation evidence'],
+    body: 'Upload required legal and technical documentation: business registration, financial statements, and innovation evidence.' },
+  { n: 'III', title: 'Committee Review', chips: ['Published criteria', 'Founder interview', '30–45 day review'],
+    body: 'The National Startup Designation Committee evaluates your application against published criteria and may call founders in for a validation interview.' },
+  { n: 'IV', title: 'Certificate Issued', chips: ['Provisional certificate', 'Verification QR code', 'Incentive access'],
+    body: 'On approval, a provisional certificate is generated with a verification QR code, granting immediate access to designated incentives and support programs.' },
+];
+---
+<div id="journey" class="mxd-section padding-pre-title">
+  <div class="mxd-container grid-l-container">
+    <div class="mxd-block mxd-section-title">
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-end">
+          <div class="col-12 col-xl-8 mxd-grid-item">
+            <span class="tag tag-s mxd-scramble" data-el-anim="inUp">Journey</span>
+            <h2 class="reveal-type" data-anim="revealType">From registration to certificate.</h2>
+          </div>
+          <div class="col-12 col-xl-4 mxd-grid-item">
+            <p class="journey-note t-medium" data-el-anim="inUp">Full application review typically takes 30–45 days. Committee review may include a founder validation interview.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mxd-container fullwidth-container">
+    <div class="journey-stack">
+      {steps.map((s, idx) => (
+        <div class="pinned-section">
+          <div class="pinned-section__inner journey-card">
+            <div class="journey-card__info">
+              <span class="tag tag-s-mobile mxd-scramble journey-card__num">{s.n} / Journey</span>
+              <h3 class="journey-card__title">{s.title}</h3>
+              <div class="journey-card__chips">
+                {s.chips.map((c) => <span class="tag tag-s-mobile mxd-scramble">{c}</span>)}
+              </div>
+              <p class="t-large journey-card__body">{s.body}</p>
+            </div>
+            <div class="journey-card__visual">
+              {idx === 0 ? (
+                <div class="profile-status" aria-hidden="true">
+                  <div class="profile-status__bar">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    <span class="profile-status__file">profile.status</span>
+                    <span class="profile-status__badge">Draft</span>
+                  </div>
+                  <pre class="profile-status__body"><span class="ln"><i>1</i>Company profile      <b class="ok">created</b></span>
+<span class="ln"><i>2</i>Leadership details   <b class="pending">pending</b></span>
+<span class="ln"><i>3</i>Product description   <b class="pending">pending</b></span></pre>
+                </div>
+              ) : (
+                <div class="journey-card__seal"><img src="/img/startupet/seal-mark.svg" alt="" width="220" height="220" /></div>
+              )}
+            </div>
+          </div>
+          <div class="pinned-section__trigger"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
