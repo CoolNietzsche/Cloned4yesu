@@ -64,3 +64,8 @@
 html {
   color-scheme: light;
 }
+
+/* Remove the third-party Clutch rating badge from section headers — StartupET
+   is a government platform and doesn't carry an agency-review widget. */
+.mxd-section-title__image,
+.mxd-section-title__image.centered { display: none !important; }
