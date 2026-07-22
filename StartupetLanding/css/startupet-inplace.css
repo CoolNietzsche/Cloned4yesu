@@ -94,19 +94,23 @@ html {
 .mxd-container:has(.mxd-clients) { display: none !important; }
 
 /* Full-width "divider" parallax bands ship as stock office photos compiled into
-   _next CSS (divider-image-1/6/8/9/12/13 across the subpages). StartupET uses
-   brand placeholders instead of stock people photography, so repaint every
-   divider band with the brand placeholder art, rotating the flag palette. */
+   _next CSS (divider-image-1/6/8/9/12/13 across the subpages). StartupET now
+   uses real Ethiopian-business photography per subpage instead of the flag
+   placeholder art; divider-image-1=team, 6=services, 8=faq, 9=contact,
+   12&13=about-us. Any other divider-image-N not listed keeps the placeholder
+   fallback. */
 .mxd-divider__image[class*="divider-image-"]{
   background-image:url(/img/startupet/ph/ph-blue.svg) !important;
   background-size:cover !important;
   background-position:center !important;
   background-repeat:no-repeat !important;
 }
-.mxd-divider__image.divider-image-1,
-.mxd-divider__image.divider-image-13{ background-image:url(/img/startupet/ph/ph-green.svg) !important; }
-.mxd-divider__image.divider-image-6{ background-image:url(/img/startupet/ph/ph-gold.svg) !important; }
-.mxd-divider__image.divider-image-9{ background-image:url(/img/startupet/ph/ph-red.svg) !important; }
+.mxd-divider__image.divider-image-1{ background-image:url(/img/startupet/divider-team.png) !important; }
+.mxd-divider__image.divider-image-6{ background-image:url(/img/startupet/divider-services.png) !important; }
+.mxd-divider__image.divider-image-8{ background-image:url(/img/startupet/divider-faq.jpg) !important; }
+.mxd-divider__image.divider-image-9{ background-image:url(/img/startupet/divider-contact.jpg) !important; }
+.mxd-divider__image.divider-image-12{ background-image:url(/img/startupet/divider-about-a.png) !important; }
+.mxd-divider__image.divider-image-13{ background-image:url(/img/startupet/divider-about-b.jpg) !important; }
 
 /* Fake social handles ship with the template (Dribbble, Behance, Github,
    Codepen, Figma Community). StartupET has no verified public social accounts
