@@ -69,3 +69,61 @@ html {
    is a government platform and doesn't carry an agency-review widget. */
 .mxd-section-title__image,
 .mxd-section-title__image.centered { display: none !important; }
+
+/* Hide leftover template demo sections on the subpages. None of these classes
+   appear on the landing page, so the homepage is unaffected:
+   - .mxd-blog-grid  = the demo "News & updates" strip (about/services/faq)
+   - .slider-card    = the demo testimonials slider (team)
+   - .mxd-awards     = the demo "Awards & publications" block (about) */
+.mxd-section:has(.mxd-blog-grid),
+.mxd-section:has(.slider-card),
+.mxd-section:has(.mxd-awards) { display: none !important; }
+
+/* Designation incentives (repurposed pricing table): the template ships fixed
+   dollar amounts, but StartupET's incentives are policy benefits, not priced
+   plans. Hide the monetary figure and keep the descriptive caption line, which
+   now carries the real administering-body note. This class only exists on the
+   incentives page, so nothing else is affected. */
+.pricing-data__price { display: none !important; }
+
+/* Hide the template's demo "Clients" logo wall (Dribbble / Logitech / Envato
+   placeholders with lorem-ipsum captions). StartupET is a government platform
+   and does not display third-party client logos. The .mxd-clients class is
+   unique to this block, so :has() removes the heading + strip together without
+   touching the incentives table. */
+.mxd-container:has(.mxd-clients) { display: none !important; }
+
+/* Full-width "divider" parallax bands ship as stock office photos compiled into
+   _next CSS (divider-image-1/6/8/9/12/13 across the subpages). StartupET uses
+   brand placeholders instead of stock people photography, so repaint every
+   divider band with the brand placeholder art, rotating the flag palette. */
+.mxd-divider__image[class*="divider-image-"]{
+  background-image:url(/img/startupet/ph/ph-blue.svg) !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+.mxd-divider__image.divider-image-1,
+.mxd-divider__image.divider-image-13{ background-image:url(/img/startupet/ph/ph-green.svg) !important; }
+.mxd-divider__image.divider-image-6{ background-image:url(/img/startupet/ph/ph-gold.svg) !important; }
+.mxd-divider__image.divider-image-9{ background-image:url(/img/startupet/ph/ph-red.svg) !important; }
+
+/* Fake social handles ship with the template (Dribbble, Behance, Github,
+   Codepen, Figma Community). StartupET has no verified public social accounts
+   to link, so the social rows are hidden rather than point somewhere invented:
+   - .mxd-socials-line = the hero "scroll to explore" social strip
+   - .socials-list     = the footer social column */
+.mxd-socials-line { display: none !important; }
+/* Footer "/ ECOSYSTEM" column is a fake-socials list ([01] Dribbble, [02]
+   Behance, …). Hide the whole block (heading + list); the Discover and Info
+   footer columns are untouched. */
+.mxd-footer-nav02__block:has(.socials-list__item) { display: none !important; }
+
+/* Hide the fake-socials column inside the fullscreen menu overlay (tagged on
+   the menu-contact item that carries the Dribbble/Behance/Codepen chips). The
+   email and address items in the same overlay are unaffected. */
+.menu-contact__item.startupet-hide { display: none !important; }
+
+/* Contact page "connect" socials block (fake Dribbble/Behance/etc.). Hidden for
+   the same reason as the footer/hero social rows — no verified accounts. */
+.mxd-socials-list { display: none !important; }
