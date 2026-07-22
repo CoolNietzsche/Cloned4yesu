@@ -132,7 +132,8 @@ html {
 
 /* The logo image already carries the StartupET Ethiopia mark, so drop the
    duplicate "StartupET / Ethiopia" text wordmark rendered next to it. */
-.mxd-logo__text { display: none !important; }
+.mxd-logo__text,
+.menu-logo__text { display: none !important; }
 
 /* Remove the glyph inside the header "Apply" button (reads as a cart icon);
    the button label stays and the theme toggle (.switcher-icon) is untouched. */
