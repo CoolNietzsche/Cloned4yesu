@@ -69,3 +69,12 @@ html {
    is a government platform and doesn't carry an agency-review widget. */
 .mxd-section-title__image,
 .mxd-section-title__image.centered { display: none !important; }
+
+/* Hide leftover template demo sections on the subpages. None of these classes
+   appear on the landing page, so the homepage is unaffected:
+   - .mxd-blog-grid  = the demo "News & updates" strip (about/services/faq)
+   - .slider-card    = the demo testimonials slider (team)
+   - .mxd-awards     = the demo "Awards & publications" block (about) */
+.mxd-section:has(.mxd-blog-grid),
+.mxd-section:has(.slider-card),
+.mxd-section:has(.mxd-awards) { display: none !important; }
