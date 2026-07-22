@@ -143,3 +143,12 @@ html {
    template's 28cqw size — shrink it so the whole word stays inside the viewport. */
 .fw-mark__content,
 .fw-mark__content.small { font-size: 17cqw !important; }
+
+/* Menu overlay preview image: the PM stands on the left, so anchor the crop to
+   the left edge instead of centre so he isn't cut off. */
+.menu-media__wrapper img { object-position: left center !important; }
+
+/* Stacked pathway panels ("slides up" section) now use real photos as the
+   full-bleed background; strengthen the dark scrim so the white pathway title
+   and metadata stay legible over bright imagery. */
+.mxd-stack-cards__card .card__cover { background: rgba(0, 0, 0, 0.5) !important; }
