@@ -127,3 +127,18 @@ html {
 /* Contact page "connect" socials block (fake Dribbble/Behance/etc.). Hidden for
    the same reason as the footer/hero social rows — no verified accounts. */
 .mxd-socials-list { display: none !important; }
+
+/* --- Navbar & footer polish (user request) --- */
+
+/* The logo image already carries the StartupET Ethiopia mark, so drop the
+   duplicate "StartupET / Ethiopia" text wordmark rendered next to it. */
+.mxd-logo__text { display: none !important; }
+
+/* Remove the glyph inside the header "Apply" button (reads as a cart icon);
+   the button label stays and the theme toggle (.switcher-icon) is untouched. */
+.mxd-header__controls .mxd-header__link i { display: none !important; }
+
+/* Footer wordmark: "StartupET" (9 letters) overflowed the frame at the
+   template's 28cqw size — shrink it so the whole word stays inside the viewport. */
+.fw-mark__content,
+.fw-mark__content.small { font-size: 17cqw !important; }
