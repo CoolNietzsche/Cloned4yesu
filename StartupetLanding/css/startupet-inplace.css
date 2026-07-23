@@ -152,6 +152,17 @@ html {
    the left edge instead of centre so he isn't cut off. */
 .menu-media__wrapper img { object-position: left center !important; }
 
+/* Homepage-only header "Apply for Designation" button: .mxd-header-permanent
+   forces every header link to --nl-white (assuming a dark backdrop), but this
+   button sits on a light header, so the label is invisible. Scoped to just
+   this button by its aria-label (shared by no other header link, in either
+   its pre-hydration "Apply Now" or hydrated "Apply for Designation" text) so
+   the other header icons/links and the dark-mode palette are untouched. */
+.mxd-header-permanent a.mxd-header__link[aria-label="Apply Now"],
+.mxd-header-permanent a.mxd-header__link[aria-label="Apply for Designation"] {
+  color: #121212;
+}
+
 /* Stacked pathway panels ("slides up" section) now use real photos as the
    full-bleed background; strengthen the dark scrim so the white pathway title
    and metadata stay legible over bright imagery. */
