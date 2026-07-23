@@ -156,3 +156,17 @@ html {
    full-bleed background; strengthen the dark scrim so the white pathway title
    and metadata stay legible over bright imagery. */
 .mxd-stack-cards__card .card__cover { background: rgba(0, 0, 0, 0.5) !important; }
+
+/* Testimonials cards: the decorative "IT" quote glyph is replaced with real
+   photography. The inline SVG is kept in-flow (visibility:hidden) so the block
+   keeps its size, and a cover photo is painted behind it, one per card. */
+.mxd-testimonials-card__quote > svg { visibility: hidden; }
+.mxd-testimonials-card__quote {
+  background-size: cover; background-position: center;
+  border-radius: .8rem; overflow: hidden;
+}
+.mxd-testimonials-card__quote.qp1 { background-image: url(/img/startupet/allworks-1.png); }
+.mxd-testimonials-card__quote.qp2 { background-image: url(/img/startupet/allworks-2.png); }
+.mxd-testimonials-card__quote.qp3 { background-image: url(/img/startupet/content-services-whiteboard.png); }
+.mxd-testimonials-card__quote.qp4 { background-image: url(/img/startupet/allworks-5.png); }
+.mxd-testimonials-card__quote.qp5 { background-image: url(/img/startupet/content-team-huddle.png); }
