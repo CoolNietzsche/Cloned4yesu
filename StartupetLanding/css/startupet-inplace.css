@@ -170,3 +170,8 @@ html {
 .mxd-testimonials-card__quote.qp3 { background-image: url(/img/startupet/content-services-whiteboard.png); }
 .mxd-testimonials-card__quote.qp4 { background-image: url(/img/startupet/allworks-5.png); }
 .mxd-testimonials-card__quote.qp5 { background-image: url(/img/startupet/content-team-huddle.png); }
+
+/* Contact page: remove the leftover US "Oakland" office block (a fake template
+   address). Targets that datalist item by its unique Google-Maps link; the real
+   Addis Ababa / Ministry block is untouched. */
+.datalist__item:has(a[href="https://goo.gl/maps/xap5o3MZBuC6DFHz8"]) { display: none !important; }
