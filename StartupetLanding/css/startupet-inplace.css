@@ -2,6 +2,25 @@
    index-creative-agency template. Never touches structure/hydration —
    safe to load alongside the original theme CSS. */
 
+/* Amharic toggle support: the template's fonts (Manrope/JetBrains Mono)
+   carry no Ethiopic glyphs, so Amharic text renders as tofu boxes without
+   this. unicode-range scopes the font to only the Ethiopic block, so
+   listing it first is safe — Latin characters keep falling through to the
+   original fonts untouched. js/startupet-i18n.js sets lang="am" on <html>
+   when Amharic is active. */
+@font-face {
+  font-family: "Noto Sans Ethiopic";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/NotoSansEthiopic.woff2) format("woff2");
+  unicode-range: U+1200-137F, U+1380-139F, U+2D80-2DDF, U+AB00-AB2F;
+}
+html[lang="am"] body,
+html[lang="am"] body * {
+  font-family: "Noto Sans Ethiopic", var(--_font-default), sans-serif !important;
+}
+
 /* Portfolio showcase repurposed as eligibility-pathway cards: the original
    template pairs each preview with a fictional "client" logo, which has no
    honest equivalent here, so it's hidden rather than replaced with a fake mark. */
@@ -186,3 +205,56 @@ html {
    address). Targets that datalist item by its unique Google-Maps link; the real
    Addis Ababa / Ministry block is untouched. */
 .datalist__item:has(a[href="https://goo.gl/maps/xap5o3MZBuC6DFHz8"]) { display: none !important; }
+
+/* Homepage hero: MinT (Ministry of Innovation and Technology) mark above the
+   "Ethiopia's Startup Era Has Begun" headline, in the empty gap the template
+   already reserves there. CSS-only (::before) so it survives hydration —
+   .mxd-hero-05__headline is a flex column with the h1 as its only child, so
+   the pseudo-element simply becomes the first stacked item, no DOM/markup
+   change needed. */
+.mxd-hero-05__headline::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 7.2rem;
+  margin: 0 auto 1.6rem;
+  background: url(/img/startupet/mint-logo.png) no-repeat center / contain;
+}
+@media (max-width: 767px) {
+  .mxd-hero-05__headline::before {
+    height: 4.4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Header EN/Amharic language switcher — styled to match the adjacent
+   Night/Day mode switcher (dimmed inactive option, bright active one). */
+.mxd-lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 1.2rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+}
+.lang-switcher__opt {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--t-muted, currentColor);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+.lang-switcher__opt.active {
+  opacity: 1;
+}
+.lang-switcher__sep {
+  opacity: 0.35;
+}
+@media (max-width: 575px) {
+  .mxd-lang-switcher {
+    margin: 0 0.6rem;
+  }
+}
