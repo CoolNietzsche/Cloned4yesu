@@ -47,8 +47,6 @@
   // { en: "exact visible text", am: "translation" } — matched against leaf
   // elements (no child elements) whose full trimmed text equals `en`/`am`.
   var DICTIONARY = [
-    { en: "Official Startup Designation Platform", am: "ይፋዊ የስታርትአፕ ምዝገባ መድረክ" },
-    { en: "Scroll to explore", am: "ለማየት ይሸብልሉ" },
     { en: "All Resources", am: "ሁሉንም ግብዓቶች" },
     { en: "ALL RESOURCES", am: "ሁሉንም ግብዓቶች" },
     { en: "Apply for Designation", am: "ለምዝገባ ያመልክቱ" },
